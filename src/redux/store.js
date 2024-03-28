@@ -3,7 +3,6 @@ import { createStore } from 'redux';
 import reducer from './reducers/index';
 
 
-//estado inicial del store
 const initialState = {
   companiesList: [
     {
@@ -38,7 +37,6 @@ const initialState = {
   ]
 };
 
-//Creacion del store
 const store = createStore(reducer, initialState);
 
 export default store;

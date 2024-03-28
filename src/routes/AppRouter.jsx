@@ -1,7 +1,6 @@
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { AuthRoute } from '../routes/AuthRoute';
-
 
 import {
   Employee,
@@ -11,8 +10,10 @@ import {
   Dashboard,
   Company,
 } from '../pages/private'
-import { Login,Home, Uikit, Register, NotFound} from '../pages/public';
-
+import { Login,Home, Uikit, NotFound, Rest, 
+  ListEmploye, UpdateEmployee, RegisterCompany, Departamentos, 
+  Nominas, InicioAdmi, RegistroEmploye,
+} from '../pages/public';
 
 
 const AppRouter = () => {
@@ -21,10 +22,17 @@ const AppRouter = () => {
     <>
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/register' element={<Register />} />
       <Route path='/uikit' element={<Uikit />} />
       <Route path='*' element={<NotFound />} />
       <Route path='/login' element={< Login/>}/>
+      <Route path='/Rest' element={< Rest/>}/>
+      <Route path='/ListEmploye' element={< ListEmploye/>}/>
+      <Route path='/UpdateEmployee' element={< UpdateEmployee/>}/>
+      <Route path='/register-company' element={< RegisterCompany/>}/>
+      <Route path='/Departamentos' element={< Departamentos/>}/>
+      <Route path='/Nominas' element={< Nominas/>}/>
+      <Route path='/InicioAdmi' element={< InicioAdmi/>}/>
+      <Route path='/RegistroEmploye' element={< RegistroEmploye/>}/>
 
 
 {/* ----------PRIVATE ROUTES-------- */}

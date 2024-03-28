@@ -1,10 +1,9 @@
 
 
-import React, { useEffect, useContext } from 'react'
-import {  useNavigate } from "react-router-dom"; 
+import { useEffect, useContext } from 'react'
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../auth/provider/AuthContext";
 import simulateAuthentication from "../pages/private/simulateAuthentication";
-
 
 
 export const AuthRoute = props => {
@@ -17,7 +16,6 @@ export const AuthRoute = props => {
       simulateAuthentication(setUserInfo, navigate)
     }
   }, []);
-
 
   return <>{props.children}</>
 }

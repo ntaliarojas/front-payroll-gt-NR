@@ -24,10 +24,13 @@ class AuthService{
             });
 
             sessionStorage.setItem('token', response.data.token)
-            const userDataJSON = JSON.stringify(response.data.data_user);
-            sessionStorage.setItem('data-user', userDataJSON)
+            const userDataJSON = JSON.stringify(response.data.user.username);
 
-            return this.getMenu(response.data.data_user.role);
+            sessionStorage.setItem('data-user', userDataJSON)
+            sessionStorage.setItem('company_name', response.data.user.campany_name)
+
+
+            return this.getMenu(response.data.user.role);
              
         } catch (error) {
             console.error("Error al iniciar sesión:", error);
@@ -70,19 +73,18 @@ class AuthService{
         const token = sessionStorage.getItem('token');
         return token;
     }
-      
     getMenu(role){
-        if(role == 'superadmin'){
+        if(role === 'superadmin'){
             return menuSuperAdmin;
         }
-        else if(role == 'admin'){
+        else if(role === 'admin'){
             return menuAdmin;
         }
-        else if(role == 'user'){
+        else if(role === 'user'){
             return menuUser;
         }
     }
     
 }
 
-export const authService = Object.freeze(new AuthService())
+export const authService = Object.freeze(new AuthService())
