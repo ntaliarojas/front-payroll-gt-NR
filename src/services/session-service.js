@@ -1,6 +1,6 @@
 
 class SessionService
- {
+{
   constructor() { }
 
   set(clave, valor) {

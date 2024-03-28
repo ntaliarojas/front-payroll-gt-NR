@@ -1,25 +1,14 @@
-// Navigation.jsx
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 export const Navigation = () => {
   return (
-    <nav>
-      <ul>
+    <nav className="bg-gray-800 flex justify-end items-center py-4 px-8">
+      <ul className="flex space-x-4">
+  
         <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/register'>Register</Link>
-        </li>
-        <li>
-          <Link to='/uikit'>UiKit</Link>
-        </li>
-       
-        <li>
-          <Link to='/login'>Login</Link>
+          <Link to='/login' className="text-white  hover:text-gray-600">Login</Link>
         </li>
       </ul>
     </nav>
-  )
+  );
 }
-

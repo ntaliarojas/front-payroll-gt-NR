@@ -1,54 +1,53 @@
-import { apiService } from "./api-service";
+import { apiService } from './api-service'
 
 class EmployeeService {
-
     constructor() {
-        this.apiService = apiService;
+        this.apiService = apiService
     }
 
-   async getEmployees() {
-        const get = await this.apiService.get({url: '/employees'});
+    async getEmployees() {
+        const get = await this.apiService.get({ url: '/employees' })
         return get
     }
 
-    
     async getEmployeeById(id) {
         const get = await this.apiService.get({
             url: '/employees/:employee_id',
             params: {
-                employee_id: id
+                employee_id: id,
             },
         })
-        return get;
+        return get
     }
 
     async createEmployee(data) {
         const post = await this.apiService.post({
-            url: '/employees', 
-            data: data});
-        return post;
+            url: '/employees',
+            data: { data },
+        })
+        return post
     }
 
     async updateEmployee(id, data) {
         const put = await this.apiService.put({
             url: '/employees/:employee_id',
             params: {
-                employee_id: id
-            }, 
-            data: {data}
-        });
-        return put;
+                employee_id: id,
+            },
+            data: { data },
+        })
+        return put
     }
 
     async deleteEmployee(id) {
-        const del = await this.apiService.delete({url: '/employees/:employee_id',
+        const del = await this.apiService.delete({
+            url: '/employees/:employee_id',
             params: {
-                employee_id: id
-            }
-        });
-        return del;
+                employee_id: id,
+            },
+        })
+        return del
     }
-  
 }
 
-export const employeeService = Object.freeze(new EmployeeService());
+export const employeeService = Object.freeze(new EmployeeService())

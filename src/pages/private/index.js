@@ -1,6 +1,6 @@
 // index.js
 
-export {  Employee } from '../../pages/private/Employee';
+export {  Employee } from './Employee';
 export { Payroll } from '../../pages/private/Payroll';
 export { Profile } from '../../pages/private/Profile';
 export { Store } from '../../pages/private/Store';
